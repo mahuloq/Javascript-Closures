@@ -1,16 +1,14 @@
-function makePerson(name) {
-  let _name = name;
-
+function createPerson(firstName, lastName) {
   return {
-    setName: (newName) => (_name = newName),
-    getName: () => _name,
+    firstName: firstName,
+    lastName: lastName,
+    getFullName() {
+      return firstName + " " + lastName;
+    },
   };
 }
 
-function assignNumber(value) {
-  let num = value;
-
-  return {
-    answer: Math.floor(Math.random() * num + 1),
-  };
-}
+let person1 = createPerson("Matt", "Tucker");
+console.log(person1.getFullName());
+let person2 = createPerson("John", "Smith");
+console.log(person2.getFullName());
