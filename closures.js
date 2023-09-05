@@ -1,8 +1,10 @@
-let count = 0;
+function makeAdder(x) {
+  function add(y) {
+    return y + x;
+  }
 
-function counter() {
-  count = count + 1;
-  return {
-    increment: count,
-  };
+  return add;
 }
+var plusFour = makeAdder(4);
+console.log(plusFour(10));
+console.log(plusFour(40));
