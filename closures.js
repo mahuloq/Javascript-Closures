@@ -1,14 +1,8 @@
-function createPerson(firstName, lastName) {
+let count = 0;
+
+function counter() {
+  count = count + 1;
   return {
-    firstName: firstName,
-    lastName: lastName,
-    getFullName() {
-      return firstName + " " + lastName;
-    },
+    increment: count,
   };
 }
-
-let person1 = createPerson("Matt", "Tucker");
-console.log(person1.getFullName());
-let person2 = createPerson("John", "Smith");
-console.log(person2.getFullName());
