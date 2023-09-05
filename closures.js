@@ -1,10 +1,11 @@
-function makeAdder(x) {
-  function add(y) {
-    return y + x;
-  }
+function generateUniqueId(prefix = "") {
+  let id = 0;
 
-  return add;
+  return function () {
+    return `${prefix}${id++}`;
+  };
 }
-var plusFour = makeAdder(4);
-console.log(plusFour(10));
-console.log(plusFour(40));
+
+const generator1 = generateUniqueId();
+
+const generator2 = generateUniqueId();
